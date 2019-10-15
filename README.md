@@ -15,4 +15,4 @@ Uruchomienie</h1>
 <ul>
 <li>1. Za pośrednictwem programu typu Intellij Eclipse. Aplikacja jest spring butowa z wbudowanym tomcatem. </li>
 </ul>
-W /zadanie-rekrutacyjne/operacje.txt znajduje się plik z którego brane są dane
+<p>W /zadanie-rekrutacyjne/operacje.txt znajduje się plik z którego brane są dane</p>
