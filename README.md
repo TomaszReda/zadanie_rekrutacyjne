@@ -5,12 +5,14 @@ Uruchomienie</h1>
 
  
 <h2> 1 Sposob</h2>
-1. Clonujemy nasz projekt
-2. Przechodzimy do projektu i wpisujemy mvn clean package
-3. java -jar target/zadanie-rekrutacyjne-0.0.1-SNAPSHOT.jar
-
+<ul>
+<li>1. Clonujemy nasz projekt </li>
+<li>2. Przechodzimy do projektu i wpisujemy mvn clean package</li>
+<li>3. java -jar target/zadanie-rekrutacyjne-0.0.1-SNAPSHOT.jar</li>
+</ul>
 
 <h2> 2 Sposob</h2>
-1. Za pośrednictwem programu typu Intellij Eclipse. Aplikacja jest spring butowa z wbudowanym tomcatem. 
-
+<ul>
+<li>1. Za pośrednictwem programu typu Intellij Eclipse. Aplikacja jest spring butowa z wbudowanym tomcatem. </li>
+</ul>
 W /zadanie-rekrutacyjne/operacje.txt znajduje się plik z którego brane są dane
