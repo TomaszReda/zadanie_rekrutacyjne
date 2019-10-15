@@ -1,14 +1,14 @@
  
 <h1> 
 Uruchomienie</h1>
-<p><b>Aplikacja była stworzona w programoenie Intellij Idea</b></p><p>
+<p><b>Aplikacja była stworzona w programowie IntelliJ IDEA</b></p><p>
 
  
 <h2> 1 Sposob</h2>
 <ul>
-<li>1. Clonujemy nasz projekt </li>
-<li>2. Przechodzimy do projektu i wpisujemy mvn clean package</li>
-<li>3. java -jar target/zadanie-rekrutacyjne-0.0.1-SNAPSHOT.jar</li>
+<li> Clonujemy projekt </li>
+<li> Przechodzimy do katalogu głownego projektu i wpisujemy mvn clean package</li>
+<li> java -jar target/zadanie-rekrutacyjne-0.0.1-SNAPSHOT.jar</li>
 </ul>
 
 <h2> 2 Sposob</h2>
