@@ -1,4 +1,4 @@
 add 2
 multiple 3
 multiple 3
-divide 0
+apply 20
