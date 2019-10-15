@@ -1,6 +1,7 @@
 package pl.tomek_reda.zadanie_rekrutacyjne.model.calculator;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,15 +9,12 @@ import java.util.logging.Logger;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class Calculator implements ICalculator {
 
     private static final Logger LOGGER = Logger.getLogger(Calculator.class.getName());
 
     private double result;
-
-    public Calculator(double result) {
-        this.result = result;
-    }
 
     @Override
     public void add(double number) {
