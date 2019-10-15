@@ -5,12 +5,16 @@ import pl.tomek_reda.zadanie_rekrutacyjne.constant.Constant;
 
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 public class Operation {
 
     private Calculator calculator;
 
     List<Map<String, Double>> operationsAndNumbers;
+
+    private static final Logger LOGGER = Logger.getLogger(Calculator.class.getName());
+
 
     public Operation(List<Map<String, Double>> operationsAndNumbers) {
         this.operationsAndNumbers = operationsAndNumbers;
@@ -19,14 +23,17 @@ public class Operation {
     public void operation() {
         createCalculatorObject();
         takeOperation();
-        System.err.println(" = " + calculator.getResult());
+        if (calculator != null)
+            System.err.println(" = " + calculator.getResult());
     }
 
     private void takeOperation() {
-        System.err.print(calculator.getResult());
-        for (Map<String, Double> operationAndNumber : operationsAndNumbers)
-            for (String key : operationAndNumber.keySet())
-                choseOperation(key, operationAndNumber);
+        if (calculator != null) {
+            System.err.print(calculator.getResult());
+            for (Map<String, Double> operationAndNumber : operationsAndNumbers)
+                for (String key : operationAndNumber.keySet())
+                    choseOperation(key, operationAndNumber);
+        }
     }
 
     private void choseOperation(String key, Map<String, Double> operationAndNumber) {
@@ -51,6 +58,8 @@ public class Operation {
         if (operationApply.containsKey(Constant.APPLY)) {
             calculator = new Calculator(operationApply.get(Constant.APPLY));
             operationsAndNumbers.remove(operationApply);
+        } else {
+            LOGGER.warning("Could't not find apply so calculator object is null");
         }
     }
 

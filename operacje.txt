@@ -1,3 +1,4 @@
 add 2
 multiple 3
-apply 10
+multiple 3
+divide 0
