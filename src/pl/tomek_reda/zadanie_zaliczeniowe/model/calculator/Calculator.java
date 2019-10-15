@@ -1,4 +1,4 @@
-package pl.tomek_reda.zadanie_zaliczeniowe.calculator;
+package pl.tomek_reda.zadanie_zaliczeniowe.model.calculator;
 
 
 import java.util.logging.Logger;
@@ -16,6 +16,7 @@ public class Calculator implements ICalculator {
     @Override
     public void add(double number) {
         try {
+            System.err.print(" + "+number);
             setResult(getResult() + number);
         } catch (Exception ex) {
             LOGGER.warning(String.format("Error add %f%n to %f%n description: %s", getResult(), number, ex.getMessage()));
@@ -25,6 +26,7 @@ public class Calculator implements ICalculator {
     @Override
     public void multiple(double number) {
         try {
+            System.err.print(" * " + number);
             setResult(getResult() * number);
         } catch (Exception ex) {
             LOGGER.warning(String.format("Error multiple %f%n with %f%n description: %s", getResult(), number, ex.getMessage()));
@@ -34,7 +36,8 @@ public class Calculator implements ICalculator {
     @Override
     public void divide(double number) {
         try {
-            setResult(getResult() * number);
+            System.err.print(" / " + number);
+            setResult(getResult() / number);
         } catch (Exception ex) {
             LOGGER.warning(String.format("Error divide %f%n from %f%n description: %s", getResult(), number, ex.getMessage()));
         }
@@ -43,6 +46,7 @@ public class Calculator implements ICalculator {
     @Override
     public void substract(double number) {
         try {
+            System.err.print(" - " + number);
             setResult(getResult() - number);
         } catch (Exception ex) {
             LOGGER.warning(String.format("Error substract %f%n from %f%n description: %s", getResult(), number, ex.getMessage()));

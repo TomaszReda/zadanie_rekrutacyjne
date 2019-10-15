@@ -1,6 +1,6 @@
 package pl.tomek_reda.zadanie_zaliczeniowe.operation;
 
-import pl.tomek_reda.zadanie_zaliczeniowe.calculator.Calculator;
+import pl.tomek_reda.zadanie_zaliczeniowe.model.calculator.Calculator;
 import pl.tomek_reda.zadanie_zaliczeniowe.constant.Constant;
 
 import java.util.ArrayList;
@@ -11,26 +11,49 @@ public class Operation {
 
     private Calculator calculator;
 
-    List<Map<String, Double>> operationAndNumber = new ArrayList<>();
+    List<Map<String, Double>> operationsAndNumbers = new ArrayList<>();
 
-    public Operation(List<Map<String, Double>> operationAndNumber) {
-        this.operationAndNumber = operationAndNumber;
+    public Operation(List<Map<String, Double>> operationsAndNumbers) {
+        this.operationsAndNumbers = operationsAndNumbers;
     }
 
     public void operation() {
         createCalculatoObject();
+        takeAction();
+        System.err.println(" = " + calculator.getResult());
     }
-
 
     private void takeAction() {
+        System.err.print(calculator.getResult());
+        for (Map<String, Double> operationAndNumber : operationsAndNumbers)
+            for (String key : operationAndNumber.keySet())
+                choseOperation(key, operationAndNumber);
+    }
+
+    private void choseOperation(String key, Map<String, Double> operationAndNumber) {
+        switch (key) {
+            case Constant.SUBSTRACT:
+                calculator.substract(operationAndNumber.get(key));
+                break;
+            case Constant.ADD:
+                calculator.add(operationAndNumber.get(key));
+                break;
+            case Constant.DIVIDE:
+                calculator.divide(operationAndNumber.get(key));
+                break;
+            case Constant.MULTIPLE:
+                calculator.multiple(operationAndNumber.get(key));
+                break;
+        }
 
     }
 
+
     private void createCalculatoObject() {
-        Map<String, Double> operationApply = operationAndNumber.get(operationAndNumber.size() - 1);
+        Map<String, Double> operationApply = operationsAndNumbers.get(operationsAndNumbers.size() - 1);
         if (operationApply.containsKey(Constant.APPLY)) {
             calculator = new Calculator(operationApply.get(Constant.APPLY));
-            operationAndNumber.remove(operationApply);
+            operationsAndNumbers.remove(operationApply);
         }
     }
 

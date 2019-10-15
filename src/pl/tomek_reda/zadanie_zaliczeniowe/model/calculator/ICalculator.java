@@ -1,4 +1,4 @@
-package pl.tomek_reda.zadanie_zaliczeniowe.calculator;
+package pl.tomek_reda.zadanie_zaliczeniowe.model.calculator;
 
 public interface ICalculator {
     public void add(double number);

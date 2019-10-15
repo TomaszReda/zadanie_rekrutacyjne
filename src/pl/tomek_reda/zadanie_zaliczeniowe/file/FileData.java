@@ -18,32 +18,32 @@ public class FileData {
     private static final Logger LOGGER = Logger.getLogger(FileData.class.getName());
 
     public static List<Map<String, Double>> readDataFromFile() {
-        List<Map<String, Double>> operationAndNumber = new ArrayList<>();
+        List<Map<String, Double>> operationsAndNumbers = new ArrayList<>();
         try {
             File file = new File("operacje.txt");
             BufferedReader br = new BufferedReader(new FileReader(file));
             String data = "";
             while ((data = br.readLine()) != null)
-                addDataToList(data, operationAndNumber);
+                addDataToList(data, operationsAndNumbers);
         } catch (Exception ex) {
             LOGGER.warning(String.format("Problem with file %s", ex.getMessage()));
         }
-        return operationAndNumber;
+        return operationsAndNumbers;
     }
 
 
-    private static void addDataToList(String data, List<Map<String, Double>> operationAndNumber) {
+    private static void addDataToList(String data, List<Map<String, Double>> operationsAndNumbers) {
         for (String operation : Constant.OPERATIONS)
             if (data.contains(operation))
-                createOprationData(operationAndNumber, data, operation);
+                createOprationData(operationsAndNumbers, data, operation);
     }
 
-    private static void createOprationData(List<Map<String, Double>> operationAndNumber, String data, String operation) {
+    private static void createOprationData(List<Map<String, Double>> operationsAndNumbers, String data, String operation) {
         Map<String, Double> operationData = new HashMap<>();
         String number = findNumberInString(data);
         if (!number.equals("brak")) {
             operationData.put(operation, Double.parseDouble(number));
-            operationAndNumber.add(operationData);
+            operationsAndNumbers.add(operationData);
         }
     }
 
